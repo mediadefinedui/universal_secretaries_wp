@@ -1,0 +1,687 @@
+/* ==========================================================================
+   Services Section - Company Registration, Tax Consultation & Bookkeeping
+   Matching Attached User Design with Pixel-Perfect Quality
+   ========================================================================== */
+
+/* Main Section Wrapper */
+.s#services,
+section#services,
+#services.s {
+  padding: 85px 0 95px;
+  background-color: #ffffff;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  color: #334155;
+  overflow: hidden;
+}
+
+/* Ensure smooth anchor navigation */
+#service-area {
+  position: relative;
+  top: -80px;
+  visibility: hidden;
+}
+
+/* Outer Container Matching Design Max-Width */
+.s#services .wrap {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header (.sh .rv)
+   -------------------------------------------------------------------------- */
+.s#services .sh {
+  margin-bottom: 42px;
+  text-align: left;
+}
+
+.s#services .sh .eyebrow {
+  display: block;
+  color: #0084cc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  font-family: inherit;
+}
+
+.s#services .sh h2 {
+  font-size: 40px;
+  font-weight: 850;
+  color: #0b2240;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px 0;
+  max-width: 720px;
+  font-family: inherit;
+}
+
+.s#services .sh p:not(.eyebrow) {
+  font-size: 15.5px;
+  color: #64748b;
+  line-height: 1.62;
+  margin: 0;
+  max-width: 620px;
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Cards Container (.rows, .row)
+   -------------------------------------------------------------------------- */
+.s#services .rows {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Reset Bootstrap .row defaults inside #services */
+.s#services .rows .row,
+.s#services .row {
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 24px;
+  padding: 42px 46px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1.14fr 0.86fr !important;
+  gap: 44px !important;
+  align-items: center;
+  box-shadow: 0 10px 30px -10px rgba(12, 35, 64, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Reset Bootstrap .row > * default full-width and gutters */
+.s#services .rows .row>*,
+.s#services .row>* {
+  width: auto !important;
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+}
+
+.s#services .row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px -12px rgba(0, 132, 204, 0.12);
+  border-color: #bae6fd;
+}
+
+/* Flipped row (Card 02): visual on the left, text on the right */
+@media (min-width: 992px) {
+  .s#services .row.flip {
+    grid-template-columns: 0.86fr 1.14fr !important;
+  }
+
+  .s#services .row.flip .rvis,
+  .s#services .row.flip .rvis-img {
+    order: 1 !important;
+  }
+
+  .s#services .row.flip .rtext {
+    order: 2 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Card Text Column (.rtext)
+   -------------------------------------------------------------------------- */
+.s#services .rtext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.s#services .rhead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.s#services .rnum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #0084cc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.s#services .tag {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.s#services .rtext h3 {
+  font-size: 28px;
+  font-weight: 850;
+  color: #0b2240;
+  line-height: 1.24;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+  font-family: inherit;
+}
+
+.s#services .rtext p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.62;
+  margin: 0 0 24px 0;
+  max-width: 530px;
+  font-family: inherit;
+}
+
+/* Checkmarks List (.ticks) */
+.s#services .ticks {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 30px 0 !important;
+  display: flex !important;
+  flex-direction: column;
+  gap: 13px;
+  width: 100%;
+}
+
+.s#services .ticks li {
+  position: relative !important;
+  padding-left: 32px !important;
+  font-size: 14.5px;
+  color: #334155;
+  line-height: 1.52;
+  font-weight: 500;
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+.s#services .ticks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4.5 8.2L6.8 10.5L11.5 5.5' stroke='%230084cc' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 132, 204, 0.15);
+}
+
+.s#services .ticks li b {
+  font-weight: 750;
+  color: #0b2240;
+}
+
+/* Primary Button (.btn) */
+.s#services .btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0084cc !important;
+  color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  padding: 13px 28px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(0, 132, 204, 0.28) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none;
+  line-height: normal !important;
+}
+
+.s#services .btn:hover {
+  background-color: #0070ad !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 132, 204, 0.38) !important;
+  color: #ffffff !important;
+}
+
+.s#services .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 132, 204, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Card Visual Area (.rvis)
+   -------------------------------------------------------------------------- */
+.s#services .rvis {
+  background: linear-gradient(145deg, #f0f7fe 0%, #e6f2fb 100%);
+  border: 1px solid #d4e8f7;
+  border-radius: 20px;
+  padding: 42px 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 335px;
+  box-sizing: border-box;
+}
+
+/* Card Photo / Image Visual Area (.rvis-img) */
+.s#services .rvis-img {
+  position: relative;
+  border-radius: 0px;
+  overflow: hidden;
+  border: 1px solid #d4e8f7;
+  box-shadow: 0 10px 28px -6px rgba(12, 35, 64, 0.08);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  min-height: 335px;
+  background: #f0f7fe;
+  box-sizing: border-box;
+}
+
+.s#services .rvis-img::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  height: 70%;
+  width: 80%;
+  background: #333982;
+}
+
+.s#services .rvis-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 335px;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 0px;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.s#services .row:hover .rvis-img img {
+  transform: scale(1.03);
+}
+
+/* Floating Status Chips (.mchip) */
+.s#services .mchip {
+  position: absolute;
+  z-index: 4;
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+  box-shadow: 0 6px 18px -2px rgba(12, 35, 64, 0.09);
+  white-space: nowrap;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.s#services .mchip b {
+  color: #0084cc;
+  font-weight: 750;
+}
+
+/* Placement of Floating Chips */
+.s#services .mchip.a {
+  top: 14px;
+  right: 14px;
+  animation: floatChipA 4.5s ease-in-out infinite;
+}
+
+.s#services .mchip.b {
+  bottom: 14px;
+  left: 14px;
+  animation: floatChipB 5s ease-in-out infinite 0.6s;
+}
+
+@keyframes floatChipA {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes floatChipB {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* Mockup Card (.mock) */
+.s#services .mock {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 12px 28px -6px rgba(12, 35, 64, 0.08),
+    0 0 0 1px rgba(226, 232, 240, 0.95);
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.s#services .mock h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0b2240;
+  margin: 0 0 3px 0;
+  letter-spacing: -0.015em;
+  font-family: inherit;
+}
+
+.s#services .mock .ms {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+/* Mockup File Rows (.mrow) */
+.s#services .mrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-top: 1px solid #f1f5f9;
+  font-size: 12.5px;
+  color: #1e293b;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.s#services .mock>.mrow:first-child {
+  border-top: none;
+}
+
+.s#services .mrow .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0084cc;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(0, 132, 204, 0.2);
+}
+
+/* Status Badges (.st) */
+.s#services .st {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  background: #e0f2fe;
+  color: #0084cc;
+  border: 1px solid #bae6fd;
+  flex-shrink: 0;
+}
+
+.s#services .st.ok {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Card 03: Bar Chart (.mbars & .mlab) */
+.s#services .mbars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 80px;
+  gap: 8px;
+  margin: 14px 0 6px 0;
+  padding: 0 4px;
+}
+
+.s#services .mbars i {
+  display: block;
+  width: 100%;
+  max-width: 28px;
+  background: #0084cc;
+  border-radius: 4px 4px 0 0;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.s#services .mbars i:hover {
+  opacity: 1;
+  transform: scaleY(1.05);
+  background: #0284c7;
+}
+
+.s#services .mlab {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  padding: 0 4px;
+}
+
+.s#services .mlab span {
+  text-align: center;
+  width: 100%;
+  max-width: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   Stats Grid (.stats)
+   -------------------------------------------------------------------------- */
+.s#services .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.s#services .stat {
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 22px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(12, 35, 64, 0.02);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  text-align: left;
+}
+
+.s#services .stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 132, 204, 0.08);
+  border-color: #bae6fd;
+}
+
+.s#services .stat .k {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+  display: block;
+}
+
+.s#services .stat b {
+  font-size: 42px;
+  font-weight: 850;
+  color: #0084cc;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.025em;
+  font-feature-settings: "tnum";
+  display: block;
+}
+
+.s#services .stat span:last-child {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.45;
+  font-weight: 450;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .s#services {
+    padding: 70px 0 80px;
+  }
+
+  .s#services .rows .row,
+  .s#services .row {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    padding: 34px 28px;
+  }
+
+  .s#services .row.flip {
+    grid-template-columns: 1fr !important;
+  }
+
+  .s#services .row.flip .rtext {
+    order: 1 !important;
+  }
+
+  .s#services .row.flip .rvis,
+  .s#services .row.flip .rvis-img {
+    order: 2 !important;
+  }
+
+  .s#services .rvis {
+    padding: 36px 20px;
+    min-height: 310px;
+  }
+
+  .s#services .rvis-img,
+  .s#services .rvis-img img {
+    min-height: 280px;
+    max-height: 350px;
+  }
+
+  .s#services .sh h2 {
+    font-size: 32px;
+  }
+
+  .s#services .stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .s#services {
+    padding: 55px 0 65px;
+  }
+
+  .s#services .wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .s#services .rows .row,
+  .s#services .row {
+    padding: 26px 18px;
+    border-radius: 20px;
+  }
+
+  .s#services .rtext h3 {
+    font-size: 22px;
+  }
+
+  .s#services .sh h2 {
+    font-size: 26px;
+  }
+
+  .s#services .mock {
+    padding: 18px 16px;
+  }
+
+  .s#services .rvis-img,
+  .s#services .rvis-img img {
+    min-height: 220px;
+    max-height: 280px;
+  }
+
+  .s#services .mchip {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .s#services .mchip.a {
+    top: 10px;
+    right: 10px;
+  }
+
+  .s#services .mchip.b {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .s#services .btn {
+    width: 100%;
+  }
+
+  .s#services .stat b {
+    font-size: 36px;
+  }
+}

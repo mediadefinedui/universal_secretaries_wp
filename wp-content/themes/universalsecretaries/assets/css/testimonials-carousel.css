@@ -1,0 +1,425 @@
+/* ==========================================================================
+   Client Recommendations - Interactive 3-Card Carousel Slider Styles
+   Universal Secretaries - Corporate & Tax Advisory Services
+   ========================================================================== */
+
+/* Main Section Wrapper */
+#testimonial-area,
+.testimonial-area {
+  position: relative;
+  background-color: #ffffff;
+  padding: 90px 0 100px;
+  border-top: 1px solid #e7eff6;
+  border-bottom: 1px solid #e7eff6;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Section Header Typography */
+.testimonial-area .section-title {
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #dbe8f3;
+  color: #0084cc;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0, 132, 204, 0.06);
+}
+
+.testimonial-badge i {
+  color: #f59e0b;
+  font-size: 11px;
+}
+
+.testimonial-heading {
+  color: #0b2240;
+  font-size: 36px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.testimonial-subheading {
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 450;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Slider Outer Wrapper & Navigation Arrows
+   -------------------------------------------------------------------------- */
+.testimonial-slider-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+
+/* Navigation Arrow Buttons */
+.testi-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #d8e5f2;
+  color: #0b2240;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(11, 34, 64, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  z-index: 10;
+  padding: 0;
+}
+
+.testi-nav-btn:hover {
+  background: #0084cc;
+  color: #ffffff;
+  border-color: #0084cc;
+  box-shadow: 0 8px 22px rgba(0, 132, 204, 0.3);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.testi-nav-prev {
+  left: 0;
+}
+
+.testi-nav-next {
+  right: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Slick Track & Slide Spacing
+   -------------------------------------------------------------------------- */
+.testimonial-slider-track {
+  margin: 0 -12px;
+}
+
+.testimonial-slider-track .slick-list {
+  padding: 10px 0 25px !important;
+  overflow: hidden;
+}
+
+.testi-slide-item {
+  padding: 0 12px;
+  height: auto;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   Individual Testimonial Card
+   -------------------------------------------------------------------------- */
+.testi-card {
+  background: #ffffff;
+  border: 1px solid #e2edf6;
+  border-radius: 20px;
+  padding: 30px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 420px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(11, 34, 64, 0.04), 0 2px 6px rgba(11, 34, 64, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0084cc, #333982);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9e0f3;
+  box-shadow: 0 16px 36px rgba(0, 132, 204, 0.12), 0 4px 12px rgba(11, 34, 64, 0.04);
+}
+
+.testi-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Top Bar: Stars & LinkedIn Verification */
+.testi-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 10px;
+}
+
+.testi-card__stars {
+  display: flex;
+  gap: 3px;
+  color: #f59e0b;
+  font-size: 13px;
+}
+
+.testi-card__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0f7fc;
+  border: 1px solid #d4e8f7;
+  color: #0077b5;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.testi-card__linkedin i {
+  font-size: 12px;
+}
+
+.testi-card__linkedin:hover {
+  background: #0077b5;
+  color: #ffffff;
+  border-color: #0077b5;
+}
+
+/* Quote Body */
+.testi-card__quote-wrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.testi-card__quote-icon {
+  font-size: 22px;
+  color: #0084cc;
+  opacity: 0.18;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.testi-card__text {
+  font-size: 14px;
+  line-height: 1.68;
+  color: #334155;
+  font-weight: 450;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Author Footer */
+.testi-card__author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px dashed #e5edf5;
+}
+
+.testi-card__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #e1edf7;
+  box-shadow: 0 2px 8px rgba(11, 34, 64, 0.08);
+  background: #edf4fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testi-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.testi-card__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 750;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #0b2240, #0084cc);
+}
+
+.testi-card__author-info {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.testi-card__name {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0b2240;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testi-card__credential {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0084cc;
+  margin-bottom: 2px;
+  letter-spacing: 0.1px;
+}
+
+.testi-card__title {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 450;
+}
+
+/* --------------------------------------------------------------------------
+   Carousel Pagination Dots
+   -------------------------------------------------------------------------- */
+.testimonial-carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.testimonial-carousel-dots ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonial-carousel-dots li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.testimonial-carousel-dots li button,
+.testi-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  font-size: 0;
+  display: block;
+}
+
+.testimonial-carousel-dots li.slick-active button,
+.testi-dot.active {
+  width: 28px;
+  background: #0084cc;
+  box-shadow: 0 2px 8px rgba(0, 132, 204, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .testimonial-slider-wrapper {
+    padding: 0 38px;
+  }
+
+  .testimonial-heading {
+    font-size: 30px;
+  }
+
+  .testi-card {
+    min-height: 400px;
+    padding: 24px 22px 22px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  #testimonial-area,
+  .testimonial-area {
+    padding: 65px 0 75px;
+  }
+
+  .testimonial-slider-wrapper {
+    padding: 0 10px;
+  }
+
+  .testi-nav-btn {
+    display: none !important;
+  }
+
+  .testimonial-heading {
+    font-size: 26px;
+  }
+
+  .testi-card {
+    min-height: 380px;
+    padding: 22px 18px 20px;
+  }
+
+  .testi-card__text {
+    -webkit-line-clamp: 8;
+  }
+}

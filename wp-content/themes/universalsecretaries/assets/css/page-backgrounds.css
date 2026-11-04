@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Universal Secretaries — Page-Wide Professional Background System
+   Cohesive visual rhythm across all page sections.
+   Brand palette: #0084cc (sky) · #0b2240 (ink) · #333982 (blue) · #f7fbfe (tint)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BODY / GLOBAL — prevent white flash between sections
+   -------------------------------------------------------------------------- */
+body {
+  background-color: #f4f8fc;
+}
+
+/* --------------------------------------------------------------------------
+   2. ABOUT AREA — warm white with soft top-to-bottom directional gradient
+      and a very faint diagonal line pattern for texture
+   -------------------------------------------------------------------------- */
+#about-area.about-area {
+  position: relative;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(180deg, #eef6fc 0%, #ffffff 38%, #f8fbfe 100%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 28px,
+      rgba(0, 132, 204, 0.025) 28px,
+      rgba(0, 132, 204, 0.025) 29px
+    );
+  background-blend-mode: normal, multiply;
+  border-top: 1px solid #ddeaf5;
+  border-bottom: 1px solid #ddeaf5;
+}
+
+/* Soft left ambient glow for the image column */
+#about-area.about-area::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -60px;
+  width: 480px;
+  height: 100%;
+  background: radial-gradient(ellipse at 0% 50%, rgba(0, 132, 204, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure inner content stays above pseudo-element */
+#about-area.about-area .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. BEHIND THE SCENES / HOW IT WORKS
+      Already has dot-grid in behind-the-scenes.css — just add ambient glows
+      and a stronger top separator so it reads as distinct from About.
+   -------------------------------------------------------------------------- */
+.s.bts-section#how-it-works {
+  border-top: 1px solid #d4e6f4 !important;
+}
+
+.s.bts-section#how-it-works::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 132, 204, 0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. COMPLIANCE CALENDAR / DEADLINE TRACKER
+      Already has dot-grid in compliance-calendar.css — reinforce with
+      a subtle top wave separator and deeper ambient tones.
+   -------------------------------------------------------------------------- */
+.s.tint#calendar {
+  border-top: 2px solid #ccdeed !important;
+  border-bottom: 2px solid #ccdeed !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. TESTIMONIAL AREA — rich navy gradient for premium "trust" feel
+      Overrides the light background set in testimonials-carousel.css
+   -------------------------------------------------------------------------- */
+#testimonial-area.testimonial-area {
+  background-color: #071828 !important;
+  background-image:
+    radial-gradient(ellipse at 10% 20%, rgba(0, 132, 204, 0.18) 0%, transparent 52%),
+    radial-gradient(ellipse at 90% 80%, rgba(51, 57, 130, 0.20) 0%, transparent 52%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 132, 204, 0.06) 0%, transparent 70%),
+    linear-gradient(160deg, #071828 0%, #0b2240 45%, #0e1f40 100%) !important;
+  border-top: 1px solid rgba(0, 132, 204, 0.18) !important;
+  border-bottom: 1px solid rgba(0, 132, 204, 0.18) !important;
+}
+
+/* Decorative floating orb — top right */
+#testimonial-area.testimonial-area::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(0, 132, 204, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative floating orb — bottom left */
+#testimonial-area.testimonial-area::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(51, 57, 130, 0.14) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Adapt typography colours for dark background */
+#testimonial-area.testimonial-area .testimonial-heading {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#testimonial-area.testimonial-area .testimonial-subheading {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+#testimonial-area.testimonial-area .testimonial-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(0, 132, 204, 0.4) !important;
+  color: #7dd3f8 !important;
+}
+
+/* Testimonial card dark glass look */
+#testimonial-area.testimonial-area .testi-card {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 132, 204, 0.08) inset !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__text {
+  color: rgba(220, 235, 248, 0.90) !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__name {
+  color: #ffffff !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__credential {
+  color: #7dd3f8 !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__title {
+  color: rgba(200, 220, 240, 0.70) !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__quote-icon {
+  color: rgba(0, 132, 204, 0.35) !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__stars .fa-star {
+  color: #f59e0b !important;
+}
+
+/* Navigation arrows on dark */
+#testimonial-area.testimonial-area .testi-nav-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+
+#testimonial-area.testimonial-area .testi-nav-btn:hover {
+  background: #0084cc !important;
+  border-color: #0084cc !important;
+}
+
+/* Pagination dots on dark */
+#testimonial-area.testimonial-area .testi-dot {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+#testimonial-area.testimonial-area .testi-dot.active {
+  background: #0084cc !important;
+}
+
+/* LinkedIn verified badge on dark */
+#testimonial-area.testimonial-area .testi-card__linkedin {
+  color: rgba(180, 210, 240, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+#testimonial-area.testimonial-area .testi-card__linkedin:hover {
+  color: #0084cc !important;
+  background: rgba(0, 132, 204, 0.15) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. FAQ SECTION — crisp cool-white with strengthened dot-grid contrast
+      Overrides background-color already set in faq-section.css
+   -------------------------------------------------------------------------- */
+.s.faq#faq {
+  background-color: #eef5fb !important;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(0, 132, 204, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(11, 34, 64, 0.05) 0px, transparent 50%),
+    radial-gradient(#c2d8ec 1.3px, transparent 1.3px) !important;
+  background-size: 100% 100%, 100% 100%, 28px 28px !important;
+  border-top: 2px solid #c8dcea !important;
+  border-bottom: 2px solid #c8dcea !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER — deepen the dark background for grounded finish
+   -------------------------------------------------------------------------- */
+footer#footer .footer-area__widgets.bg--dark--light {
+  background-color: #071828 !important;
+  background-image:
+    radial-gradient(at 0% 100%, rgba(0, 132, 204, 0.08) 0%, transparent 55%),
+    radial-gradient(at 100% 0%, rgba(51, 57, 130, 0.08) 0%, transparent 55%);
+  border-top: 2px solid rgba(0, 132, 204, 0.20);
+}
+
+footer#footer .footer-area__copyright.bg--dark {
+  background-color: #040e18 !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. SECTION TRANSITION DIVIDERS
+      Subtle top-edge shading on key alternating sections so the page
+      reads as a flowing sequence rather than stacked blocks.
+   -------------------------------------------------------------------------- */
+
+/* Light → dark transition: testimonials top edge */
+#testimonial-area.testimonial-area {
+  box-shadow: inset 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark → light transition: FAQ top edge */
+.s.faq#faq {
+  box-shadow: inset 0 6px 18px rgba(0, 80, 130, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   9. SCROLLBAR — brand-coloured for a polished finish (webkit only)
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #e8f2fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #0084cc;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0069a8;
+}
+

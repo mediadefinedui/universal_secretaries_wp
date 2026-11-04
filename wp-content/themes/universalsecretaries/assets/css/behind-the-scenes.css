@@ -1,0 +1,398 @@
+/* ==========================================================================
+   Behind The Scenes - Company Registration Process Timeline
+   Matching Attached User Design & Aesthetics with Pixel-Perfect Precision
+   ========================================================================== */
+
+/* Main Section Wrapper */
+.s.bts-section,
+section.bts-section {
+  padding: 90px 0 105px;
+  background-color: #f7fbfe;
+  background-image: radial-gradient(#dce9f5 1.4px, transparent 1.4px);
+  background-size: 28px 28px;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  color: #334155;
+  overflow: hidden;
+}
+
+/* Container Width Matching Design */
+.bts-section .wrap.bts {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 370px 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Sticky Intro (.bts-intro)
+   -------------------------------------------------------------------------- */
+.bts-intro {
+  position: sticky;
+  top: 110px;
+  align-self: flex-start;
+  z-index: 5;
+  text-align: left;
+}
+
+/* Eyebrow Label with subtle dash */
+.bts-intro .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  font-family: inherit;
+}
+
+.bts-intro .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background-color: #64748b;
+  border-radius: 2px;
+}
+
+/* Main Heading */
+.bts-intro .sh h2 {
+  font-size: 40px;
+  font-weight: 850;
+  color: #0b2240;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0;
+  font-family: inherit;
+}
+
+/* Description Text */
+.bts-intro > p:not(.eyebrow) {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 16px 0 24px 0;
+  font-family: inherit;
+}
+
+/* Action Button (.btn) */
+.bts-intro .btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #0084cc !important;
+  color: #ffffff !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  padding: 13.5px 28px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(0, 132, 204, 0.3) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none;
+  line-height: normal !important;
+}
+
+.bts-intro .btn:hover {
+  background-color: #0070ad !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 132, 204, 0.42) !important;
+  color: #ffffff !important;
+}
+
+.bts-intro .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 132, 204, 0.25) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Timeline Track & Steps (ol.tl)
+   -------------------------------------------------------------------------- */
+ol.tl {
+  list-style: none !important;
+  padding: 0 0 0 56px !important;
+  margin: 0 !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Vertical Timeline Track Line (runs through the center of 34px circle at left 0) */
+ol.tl::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  bottom: 30px;
+  width: 2px;
+  background: #dbeafe;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Dynamic Progress Overlay Line via --p variable */
+ol.tl::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  height: calc((100% - 52px) * (var(--p-val, 42) / 100));
+  max-height: calc(100% - 52px);
+  width: 2px;
+  background: linear-gradient(to bottom, #0084cc, #38bdf8);
+  border-radius: 4px;
+  z-index: 2;
+  transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(0, 132, 204, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Timeline Step Item (li.rv) - The White Card
+   -------------------------------------------------------------------------- */
+ol.tl li {
+  position: relative !important;
+  list-style: none !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #dbeafe;
+  border-radius: 18px;
+  padding: 24px 28px !important;
+  box-shadow: 0 4px 18px rgba(12, 35, 64, 0.03);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.28s ease, 
+              border-color 0.28s ease;
+  text-align: left;
+}
+
+/* Circular Number Badge (data-n) Sitting on the Left Timeline Track */
+ol.tl li::before {
+  content: attr(data-n);
+  position: absolute;
+  left: -56px;
+  top: 22px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #0084cc;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 800;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  box-shadow: 0 0 0 5px #f7fbfe, 0 3px 8px rgba(0, 132, 204, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+/* Step 4 Special Color: Deep Indigo/Purple */
+ol.tl li.boli {
+  border-color: #3730a3 !important;
+}
+
+ol.tl li.boli::before {
+  background: #3730a3 !important;
+  box-shadow: 0 0 0 5px #f7fbfe, 0 3px 10px rgba(55, 48, 163, 0.35) !important;
+}
+
+/* Hover & Active Effects on Cards */
+ol.tl li:hover {
+  transform: translateX(6px);
+  border-color: #93c5fd;
+  box-shadow: 0 12px 28px -6px rgba(0, 132, 204, 0.12);
+}
+
+ol.tl li:hover::before {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px #f7fbfe, 0 0 16px rgba(0, 132, 204, 0.55);
+}
+
+ol.tl li.boli:hover {
+  border-color: #312e81 !important;
+  box-shadow: 0 12px 28px -6px rgba(55, 48, 163, 0.18) !important;
+}
+
+ol.tl li.boli:hover::before {
+  box-shadow: 0 0 0 5px #f7fbfe, 0 0 16px rgba(55, 48, 163, 0.6) !important;
+}
+
+/* Step Active State (Illuminated as scrolled past) */
+ol.tl li.is-passed::before,
+ol.tl li.is-active::before {
+  box-shadow: 0 0 0 5px #f7fbfe, 0 0 14px rgba(0, 132, 204, 0.45);
+}
+
+ol.tl li.boli.is-passed::before,
+ol.tl li.boli.is-active::before {
+  box-shadow: 0 0 0 5px #f7fbfe, 0 0 14px rgba(55, 48, 163, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   Step Typography & Badges
+   -------------------------------------------------------------------------- */
+ol.tl li h3 {
+  font-size: 18px;
+  font-weight: 850;
+  color: #0b2240;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Flag Badge on Step 4 (Required since 30 Mar 2026) */
+ol.tl li .flag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #1e1b4b;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3.5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* Step Description */
+ol.tl li p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 14px 0;
+  font-family: inherit;
+}
+
+/* Responsible Role Badge (.who) */
+ol.tl li .who {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f9ff;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 3.5px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: inherit;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal (.rv)
+   -------------------------------------------------------------------------- */
+.bts-section .rv {
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .s.bts-section {
+    padding: 70px 0 80px;
+  }
+
+  .bts-section .wrap.bts {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .bts-intro {
+    position: static;
+    max-width: 600px;
+  }
+
+  .bts-intro .sh h2 {
+    font-size: 32px;
+  }
+
+  ol.tl {
+    padding-left: 50px !important;
+  }
+
+  ol.tl::before,
+  ol.tl::after {
+    left: 15px;
+  }
+
+  ol.tl li::before {
+    left: -50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .s.bts-section {
+    padding: 55px 0 65px;
+  }
+
+  .bts-section .wrap.bts {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bts-intro .sh h2 {
+    font-size: 26px;
+  }
+
+  ol.tl {
+    padding-left: 44px !important;
+  }
+
+  ol.tl li {
+    padding: 18px 16px !important;
+    border-radius: 16px;
+  }
+
+  ol.tl li::before {
+    left: -44px;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    top: 18px;
+  }
+
+  ol.tl::before,
+  ol.tl::after {
+    left: 14px;
+    top: 18px;
+  }
+
+  ol.tl li h3 {
+    font-size: 16px;
+  }
+
+  ol.tl li .flag {
+    font-size: 9.5px;
+    padding: 3px 8px;
+  }
+
+  .bts-intro .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="aiBlueGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="65%" stop-color="#0f172a"/>
+      <stop offset="88%" stop-color="#38bdf8"/>
+      <stop offset="96%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </radialGradient>
+    <linearGradient id="purpleLaurel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Laurel Wreath in Cyan / Indigo / Purple -->
+  <g fill="url(#purpleLaurel)" opacity="0.95">
+    <ellipse cx="23" cy="68" rx="6" ry="3.5" transform="rotate(-30 23 68)"/>
+    <ellipse cx="28" cy="81" rx="6.5" ry="3.5" transform="rotate(-15 28 81)"/>
+    <ellipse cx="37" cy="93" rx="6.5" ry="3.5" transform="rotate(10 37 93)"/>
+    <ellipse cx="49" cy="103" rx="6.5" ry="3.5" transform="rotate(30 49 103)"/>
+    
+    <ellipse cx="137" cy="68" rx="6" ry="3.5" transform="rotate(30 137 68)"/>
+    <ellipse cx="132" cy="81" rx="6.5" ry="3.5" transform="rotate(15 132 81)"/>
+    <ellipse cx="123" cy="93" rx="6.5" ry="3.5" transform="rotate(-10 123 93)"/>
+    <ellipse cx="111" cy="103" rx="6.5" ry="3.5" transform="rotate(-30 111 103)"/>
+  </g>
+
+  <!-- Circular Outer Medallion -->
+  <circle cx="80" cy="74" r="50" fill="url(#aiBlueGrad)" filter="url(#shadow2)"/>
+  <circle cx="80" cy="74" r="45" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.5"/>
+
+  <!-- Top Curved Pill Badge: BEST IN CLASS AI -->
+  <path d="M52 46 Q80 39 108 46 L105 54 Q80 47 55 54 Z" fill="#6366f1"/>
+  <text x="80" y="50" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="850" font-size="6" letter-spacing="0.8">BEST IN CLASS AI</text>
+
+  <!-- Main Content -->
+  <text x="80" y="67" text-anchor="middle" fill="#38bdf8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="14" letter-spacing="1">2025</text>
+  <text x="80" y="78" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="750" font-size="7" letter-spacing="0.5">ANALYTICS /</text>
+  <text x="80" y="87" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="750" font-size="7" letter-spacing="0.5">METRICS /</text>
+  <text x="80" y="96" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="750" font-size="7" letter-spacing="0.5">REPORTING</text>
+
+  <!-- Bottom Black Banner -->
+  <g filter="url(#shadow2)">
+    <rect x="36" y="112" width="88" height="16" rx="2" fill="#0b0f19"/>
+    <rect x="36" y="112" width="88" height="16" rx="2" fill="none" stroke="#38bdf8" stroke-width="0.75"/>
+    <text x="80" y="123" text-anchor="middle" fill="#e0f2fe" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6.5" letter-spacing="0.8">THE CRAIG WEISS GROUP</text>
+  </g>
+</svg>

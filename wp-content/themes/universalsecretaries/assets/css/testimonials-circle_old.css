@@ -1,0 +1,369 @@
+/* ==========================================================================
+   Client Recommendations Circular / Orbital Slider Styles
+   Universal Secretaries
+   ========================================================================== */
+
+#testimonial-area {
+  position: relative;
+  background-color: #f8fafc;
+  padding: 85px 0 100px;
+  overflow: hidden;
+}
+
+#testimonial-area .section-title {
+  margin-bottom: 45px;
+}
+
+#testimonial-area .section-title h4 {
+  color: #058acb;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+#testimonial-area .section-title h2 {
+  color: #0b2240;
+  font-size: 32px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Testimonials Container Wrapper
+   -------------------------------------------------------------------------- */
+.testi-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  min-height: 620px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Individual Client Elements
+   -------------------------------------------------------------------------- */
+.client-single {
+  position: static;
+}
+
+/* Client Avatars */
+.client-single .client-img {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 20px rgba(11, 34, 64, 0.12);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+.client-single .client-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  transition: transform 0.35s ease;
+}
+
+.client-single:hover .client-img {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(5, 138, 203, 0.25);
+  border-color: #058acb;
+}
+
+.client-single.active .client-img {
+  width: 86px;
+  height: 86px;
+  border-color: #058acb;
+  box-shadow: 0 0 0 5px rgba(5, 138, 203, 0.25), 0 14px 32px rgba(5, 138, 203, 0.35);
+  z-index: 12;
+}
+
+/* Placeholder avatar styling if image is pending */
+.client-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0b2240, #058acb);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Orbital Positions for Desktop (1 to 9 in clockwise arrangement)
+   -------------------------------------------------------------------------- */
+.client-single.position-1 .client-img { top: 0px; left: 50%; transform: translateX(-50%); }
+.client-single.position-2 .client-img { top: 40px; right: 14%; }
+.client-single.position-3 .client-img { top: 200px; right: 2%; }
+.client-single.position-4 .client-img { top: 370px; right: 3%; }
+.client-single.position-5 .client-img { bottom: 25px; right: 16%; }
+.client-single.position-6 .client-img { bottom: 0px; left: 50%; transform: translateX(-50%); }
+.client-single.position-7 .client-img { bottom: 25px; left: 16%; }
+.client-single.position-8 .client-img { top: 370px; left: 3%; }
+.client-single.position-9 .client-img { top: 200px; left: 2%; }
+
+/* Maintain translation when active */
+.client-single.position-1.active .client-img { transform: translateX(-50%) scale(1.15); }
+.client-single.position-6.active .client-img { transform: translateX(-50%) scale(1.15); }
+.client-single.position-2.active .client-img,
+.client-single.position-3.active .client-img,
+.client-single.position-4.active .client-img,
+.client-single.position-5.active .client-img,
+.client-single.position-7.active .client-img,
+.client-single.position-8.active .client-img,
+.client-single.position-9.active .client-img { transform: scale(1.15); }
+
+/* --------------------------------------------------------------------------
+   Central Testimonial Comment Card
+   -------------------------------------------------------------------------- */
+.client-single .client-comment {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 670px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 44px 48px;
+  box-shadow: 0 16px 50px rgba(11, 34, 64, 0.09);
+  border: 1px solid #edf2f7;
+  text-align: center;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.client-single.active .client-comment {
+  display: block;
+  animation: testiCardFadeIn 0.45s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes testiCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.client-comment:hover {
+  box-shadow: 0 20px 60px rgba(5, 138, 203, 0.15);
+  border-color: #d8e9f8;
+}
+
+/* Quote Icon */
+.client-comment > span {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 30px;
+  color: #058acb;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* LinkedIn Link & Author Info */
+.client-comment .link-linked-in {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: opacity 0.25s ease;
+}
+
+.client-comment .link-linked-in:hover {
+  opacity: 0.85;
+}
+
+.client-comment .link-linked-in h3 {
+  font-size: 23px;
+  font-weight: 750;
+  color: #0b2240;
+  margin-bottom: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.client-comment .link-linked-in h3::after {
+  content: "\f08c"; /* fa-linkedin-square */
+  font-family: FontAwesome;
+  font-size: 19px;
+  color: #0077b5;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+.client-comment .link-linked-in .c-coli {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #058acb;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.client-comment .link-linked-in h4 {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  white-space: pre-line;
+}
+
+/* Recommendation Text */
+.client-comment > h3,
+.client-comment .c-dis {
+  font-size: 14.8px;
+  line-height: 1.75;
+  color: #475569;
+  font-weight: 400;
+  text-align: center;
+  text-transform: none;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0 10px 4px;
+}
+
+.client-comment .c-dis:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Custom subtle scrollbar for lengthy reviews */
+.client-comment > h3::-webkit-scrollbar,
+.client-comment .c-dis::-webkit-scrollbar {
+  width: 5px;
+}
+
+.client-comment > h3::-webkit-scrollbar-thumb,
+.client-comment .c-dis::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+/* Hide extra design credit cleanly */
+.client-single .client-info {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile & Tablet Responsiveness (< 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  #testimonial-area {
+    padding: 60px 0 80px;
+  }
+
+  .testi-wrap {
+    min-height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .client-single {
+    display: contents;
+  }
+
+  .client-single .client-img {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 60px !important;
+    height: 60px !important;
+    flex-shrink: 0;
+    order: 1;
+    margin: 4px;
+  }
+
+  .client-single.active .client-img {
+    width: 68px !important;
+    height: 68px !important;
+    transform: scale(1.08) !important;
+    border-color: #058acb !important;
+    box-shadow: 0 0 0 4px rgba(5, 138, 203, 0.25), 0 8px 20px rgba(5, 138, 203, 0.35) !important;
+  }
+
+  .client-single .client-comment {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 32px 24px;
+    margin-top: 20px;
+    order: 2;
+  }
+
+  .client-comment .link-linked-in h3 {
+    font-size: 20px;
+  }
+
+  .client-comment > h3,
+  .client-comment .c-dis {
+    font-size: 14px;
+    line-height: 1.68;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 575px) {
+  .client-single .client-img {
+    width: 52px !important;
+    height: 52px !important;
+    margin: 3px;
+  }
+
+  .client-single.active .client-img {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .client-single .client-comment {
+    padding: 26px 18px;
+  }
+
+  .client-comment .link-linked-in h3 {
+    font-size: 18px;
+  }
+
+  .client-comment .link-linked-in h4 {
+    font-size: 12.5px;
+  }
+
+  .client-comment > h3,
+  .client-comment .c-dis {
+    font-size: 13.5px;
+  }
+}

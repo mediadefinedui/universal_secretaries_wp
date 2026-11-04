@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="navyMedallion" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#244476"/>
+      <stop offset="80%" stop-color="#142646"/>
+      <stop offset="100%" stop-color="#0c172d"/>
+    </radialGradient>
+    <linearGradient id="bronzeRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c471c"/>
+      <stop offset="25%" stop-color="#cd7838"/>
+      <stop offset="50%" stop-color="#f0a568"/>
+      <stop offset="75%" stop-color="#cd7838"/>
+      <stop offset="100%" stop-color="#8c471c"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Navy Medallion -->
+  <circle cx="80" cy="70" r="46" fill="url(#navyMedallion)" filter="url(#shadow3)"/>
+  <circle cx="80" cy="70" r="43.5" fill="none" stroke="#2a528e" stroke-width="1.2"/>
+  <circle cx="80" cy="70" r="41" fill="none" stroke="#e0a36e" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Brandon Hall 'X' / Sparkle Logo -->
+  <g transform="translate(80, 50) scale(0.85)">
+    <!-- Stylized four-point star / X -->
+    <path d="M0 -16 Q-3 -3 -16 0 Q-3 3 0 16 Q3 3 16 0 Q3 -3 0 -16 Z" fill="#ffffff"/>
+    <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brandon Hall Group Text -->
+  <text x="80" y="73" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="0.4">Brandon Hall Group</text>
+  <text x="80" y="80" text-anchor="middle" fill="#93c5fd" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="500" font-size="5" letter-spacing="0.3">HCM Excellence Award</text>
+
+  <!-- Bronze Ribbon Banner -->
+  <g filter="url(#shadow3)">
+    <!-- Ribbon Tails -->
+    <path d="M18 106 L28 98 L28 112 Z" fill="#6d3412"/>
+    <path d="M142 106 L132 98 L132 112 Z" fill="#6d3412"/>
+
+    <!-- Main Ribbon Arc -->
+    <path d="M22 104 Q80 94 138 104 L134 116 Q80 106 26 116 Z" fill="url(#bronzeRibbon)"/>
+    <path d="M26 116 Q80 106 134 116" fill="none" stroke="#f0a568" stroke-width="0.75"/>
+    
+    <text x="80" y="108" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="6" letter-spacing="0.8">LEARNING AND DEVELOPMENT</text>
+    <text x="80" y="114" text-anchor="middle" fill="#2d1406" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5.5" letter-spacing="1">BRONZE</text>
+  </g>
+</svg>

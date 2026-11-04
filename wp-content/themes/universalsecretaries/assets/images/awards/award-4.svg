@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="navyMedallion4" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#244476"/>
+      <stop offset="80%" stop-color="#142646"/>
+      <stop offset="100%" stop-color="#0c172d"/>
+    </radialGradient>
+    <linearGradient id="bronzeRibbon4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9a4d1a"/>
+      <stop offset="30%" stop-color="#d9823f"/>
+      <stop offset="50%" stop-color="#f5af73"/>
+      <stop offset="70%" stop-color="#d9823f"/>
+      <stop offset="100%" stop-color="#9a4d1a"/>
+    </linearGradient>
+    <filter id="shadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Navy Medallion -->
+  <circle cx="80" cy="70" r="46" fill="url(#navyMedallion4)" filter="url(#shadow4)"/>
+  <circle cx="80" cy="70" r="43.5" fill="none" stroke="#2a528e" stroke-width="1.2"/>
+  <circle cx="80" cy="70" r="41" fill="none" stroke="#e0a36e" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Brandon Hall 'X' / Sparkle Logo -->
+  <g transform="translate(80, 50) scale(0.85)">
+    <path d="M0 -16 Q-3 -3 -16 0 Q-3 3 0 16 Q3 3 16 0 Q3 -3 0 -16 Z" fill="#ffffff"/>
+    <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brandon Hall Group Text -->
+  <text x="80" y="74" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="7.5" letter-spacing="0.4">Brandon Hall Group</text>
+
+  <!-- Bronze Ribbon Banner: TECHNOLOGY EXCELLENCE AWARD BRONZE -->
+  <g filter="url(#shadow4)">
+    <path d="M16 106 L26 98 L26 112 Z" fill="#6d3412"/>
+    <path d="M144 106 L134 98 L134 112 Z" fill="#6d3412"/>
+
+    <path d="M20 104 Q80 94 140 104 L136 116 Q80 106 24 116 Z" fill="url(#bronzeRibbon4)"/>
+    <path d="M24 116 Q80 106 136 116" fill="none" stroke="#f5af73" stroke-width="0.75"/>
+    
+    <text x="80" y="108" text-anchor="middle" fill="#ffffff" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="5.5" letter-spacing="0.6">TECHNOLOGY EXCELLENCE AWARD</text>
+    <text x="80" y="114" text-anchor="middle" fill="#2d1406" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="5.5" letter-spacing="1">BRONZE</text>
+  </g>
+</svg>

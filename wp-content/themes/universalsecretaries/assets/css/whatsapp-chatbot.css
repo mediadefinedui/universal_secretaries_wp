@@ -1,0 +1,432 @@
+/* ==========================================================================
+   WhatsApp Floating Chatbot Bubble & Widget
+   Sri Lankan Single Consultant (+94 77 660 0799)
+   ========================================================================== */
+
+/* Adjust back-to-top button so it doesn't collide with WhatsApp bubble */
+#backBTn {
+  bottom: 200px !important;
+  right: 28px !important;
+  z-index: 999 !important;
+}
+
+/* Floating Trigger Container */
+.wa-chatbot-wrapper {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99998;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Floating Circle Button */
+.wa-chatbot-btn {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  outline: none;
+}
+
+.wa-chatbot-btn:hover {
+  background: #1ebc59;
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+}
+
+.wa-chatbot-btn i.fa-whatsapp {
+  font-size: 34px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.wa-chatbot-btn.active i.fa-whatsapp {
+  display: none;
+}
+
+.wa-chatbot-btn .wa-close-icon {
+  display: none;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.wa-chatbot-btn.active .wa-close-icon {
+  display: block;
+}
+
+/* Unread Badge */
+.wa-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background: #ef4444;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: waPulseBadge 2s infinite;
+}
+
+@keyframes waPulseBadge {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Callout Tooltip Bubble */
+.wa-tooltip-bubble {
+  position: absolute;
+  right: 76px;
+  bottom: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 10px 16px;
+  box-shadow: 0 10px 30px rgba(12, 35, 64, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  max-width: 270px;
+  animation: waFadeInRight 0.4s ease forwards;
+  z-index: 99997;
+  cursor: pointer;
+}
+
+.wa-tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.wa-tooltip-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b2240;
+  line-height: 1.35;
+}
+
+.wa-tooltip-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.wa-tooltip-close:hover {
+  color: #0f172a;
+}
+
+@keyframes waFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================================
+   Chatbot Window
+   ========================================================================== */
+.wa-chat-window {
+  position: fixed;
+  bottom: 102px;
+  right: 28px;
+  width: 360px;
+  max-width: calc(100vw - 36px);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(12, 35, 64, 0.22), 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 99999;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  animation: waSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border: 1px solid #e5edf5;
+}
+
+.wa-chat-window.show {
+  display: flex;
+}
+
+@keyframes waSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Chat Header */
+.wa-chat-header {
+  background: rgb(5 138 203);
+  color: #ffffff;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-avatar-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #075e54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  position: relative;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.wa-online-dot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 11px;
+  height: 11px;
+  background: #25D366;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.wa-header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-header-name {
+  font-size: 15px;
+  font-weight: 750;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.wa-header-status {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wa-close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.wa-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Chat Body */
+.wa-chat-body {
+  background-color: #efeae2;
+  background-image: radial-gradient(#d4cbbe 1px, transparent 1px);
+  background-size: 16px 16px;
+  padding: 16px;
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chat Message Bubbles */
+.wa-message {
+  background: #ffffff;
+  border-radius: 14px 14px 14px 2px;
+  padding: 11px 13px 8px;
+  max-width: 86%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  position: relative;
+  font-size: 13px;
+  color: #111b21;
+  line-height: 1.45;
+}
+
+.wa-message-time {
+  font-size: 10px;
+  color: #667781;
+  text-align: right;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+/* Quick Inquiry Chips */
+.wa-quick-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.wa-chip-btn {
+  background: #ffffff;
+  border: 1px solid #d1d7db;
+  border-radius: 18px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0084cc;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wa-chip-btn:hover {
+  background: #f0f7fc;
+  border-color: #0084cc;
+  transform: translateX(3px);
+}
+
+/* Chat Footer / Input */
+.wa-chat-footer {
+  background: #f0f2f5;
+  padding: 12px 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.wa-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-chat-input {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #d1d7db;
+  border-radius: 20px;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  color: #111b21;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.wa-chat-input:focus {
+  border-color: #25D366;
+}
+
+.wa-send-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #25D366;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.wa-send-btn:hover {
+  background: #1ebc59;
+  transform: scale(1.05);
+}
+
+.wa-direct-btn {
+  width: 100%;
+  background: #25D366;
+  color: #ffffff !important;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.wa-direct-btn:hover {
+  background: #1ebc59;
+  color: #ffffff !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .wa-chatbot-wrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+  .wa-chat-window {
+    bottom: 90px;
+    right: 18px;
+    left: 18px;
+    width: auto;
+  }
+  .wa-tooltip-bubble {
+    display: none;
+  }
+  #backBTn {
+    bottom: 88px !important;
+    right: 20px !important;
+  }
+}

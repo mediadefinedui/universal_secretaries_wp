@@ -1,0 +1,524 @@
+/* ==========================================================================
+   Universal Secretaries - Frequently Asked Questions (FAQ) Section Styles
+   "Before You Book" - Collapsible Accordion with Rich Visual Aesthetics
+   ========================================================================== */
+
+/* Main Section Wrapper */
+.s.faq,
+.faq-section {
+  position: relative;
+  padding: 95px 0 100px;
+  background-color: #f8fafc;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 132, 204, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(11, 34, 64, 0.04) 0px, transparent 50%),
+    radial-gradient(#d5e2ee 1.2px, transparent 1.2px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+  border-top: 1px solid #e8eff6;
+  border-bottom: 1px solid #e8eff6;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+  overflow: hidden;
+}
+
+/* Subtle decorative ambient lights */
+.s.faq::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(0, 132, 204, 0.08) 0%, rgba(0, 132, 204, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.s.faq::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(11, 34, 64, 0.06) 0%, rgba(11, 34, 64, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Inner Centered Container matching user's max-width:840px */
+.s.faq .wrap,
+.faq-section .wrap {
+  max-width: 840px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header (.sh .rv) */
+.s.faq .sh,
+.faq-header {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+/* Eyebrow Badge matching modern fintech / corporate aesthetics */
+.s.faq .eyebrow,
+.faq-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+  border-radius: 999px;
+  padding: 5px 16px 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+}
+
+.s.faq .eyebrow .eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #0084cc;
+  box-shadow: 0 0 0 3px rgba(0, 132, 204, 0.2);
+  display: inline-block;
+}
+
+/* Section Title */
+.s.faq .sh h2,
+.faq-header h2 {
+  font-size: 38px;
+  font-weight: 850;
+  color: #0b2240;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px 0;
+}
+
+.s.faq .sh h2 .title-accent {
+  color: #0084cc;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtitle description */
+.faq-subheading {
+  font-size: 16px;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+  font-weight: 450;
+}
+
+/* FAQ Controls Bar (Item count + Expand/Collapse All toggle) */
+.faq-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 4px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.faq-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.faq-count-badge i {
+  color: #0084cc;
+}
+
+.faq-toggle-all-btn {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.faq-toggle-all-btn:hover {
+  background: #ffffff;
+  color: #0084cc;
+  border-color: #0084cc;
+  box-shadow: 0 2px 6px rgba(0, 132, 204, 0.12);
+}
+
+/* ==========================================================================
+   Details & Summary - Collapsible Accordion Styles
+   ========================================================================== */
+.s.faq details {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid transparent;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(11, 34, 64, 0.025);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.s.faq details:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 20px rgba(11, 34, 64, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Open State */
+.s.faq details[open] {
+  border-color: #0084cc;
+  border-left-color: #0084cc;
+  box-shadow: 0 12px 30px -4px rgba(0, 132, 204, 0.12), 0 4px 10px -2px rgba(11, 34, 64, 0.03);
+  background: #ffffff;
+}
+
+/* Summary Trigger */
+.s.faq details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  outline: none;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+/* Hide default native disclosure triangles */
+.s.faq details summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.s.faq details summary::marker {
+  display: none !important;
+}
+
+/* Focus styles for keyboard accessibility */
+.s.faq details summary:focus-visible {
+  outline: 2px solid #0084cc;
+  outline-offset: -2px;
+  border-radius: 12px;
+}
+
+/* Question Inner Content */
+.faq-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  padding-right: 14px;
+}
+
+/* Question Number Badge (01, 02, etc.) */
+.faq-q-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: #f1f5f9;
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.s.faq details[open] .faq-q-number {
+  background-color: #e0f2fe;
+  color: #0084cc;
+}
+
+/* Question Title */
+.faq-q-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b2240;
+  line-height: 1.42;
+  margin: 0;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.s.faq details summary:hover .faq-q-title {
+  color: #0084cc;
+}
+
+.s.faq details[open] .faq-q-title {
+  color: #0b2240;
+}
+
+/* Chevron Circle Icon Indicator */
+.faq-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #0b2240;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.faq-chevron i {
+  font-size: 13px;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.s.faq details summary:hover .faq-chevron {
+  background: #e2e8f0;
+  color: #0084cc;
+}
+
+.s.faq details[open] .faq-chevron {
+  background: #0084cc;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 132, 204, 0.3);
+}
+
+.s.faq details[open] .faq-chevron i {
+  transform: rotate(180deg);
+}
+
+/* Answer Content Container */
+.faq-content {
+  padding: 4px 24px 24px 72px;
+  position: relative;
+}
+
+.s.faq details p,
+.faq-content p {
+  font-size: 15px;
+  line-height: 1.72;
+  color: #475569;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Highlight tags inside answers */
+.faq-content mark,
+.faq-content .faq-badge-term {
+  background-color: #f0f9ff;
+  color: #0369a1;
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+}
+
+/* ==========================================================================
+   Bottom Assistance Card ("Still have questions?")
+   ========================================================================== */
+.faq-bottom-card {
+  margin-top: 36px;
+  background: #ffffff;
+  border: 1px solid #dbe6f0;
+  border-radius: 18px;
+  padding: 26px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(11, 34, 64, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-bottom-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #0084cc 0%, #00b4d8 100%);
+}
+
+.faq-bottom-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.faq-bottom-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 14px;
+  background: #e0f2fe;
+  color: #0084cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.faq-bottom-text h4 {
+  font-size: 17px;
+  font-weight: 750;
+  color: #0b2240;
+  margin: 0 0 4px 0;
+}
+
+.faq-bottom-text p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.faq-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.faq-btn-book {
+  background: #0084cc;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 132, 204, 0.25);
+  transition: all 0.2s ease;
+}
+
+.faq-btn-book:hover {
+  background: #0273b5;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 132, 204, 0.35);
+  color: #ffffff !important;
+}
+
+.faq-btn-whatsapp {
+  background: #25d366;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  transition: all 0.2s ease;
+}
+
+.faq-btn-whatsapp:hover {
+  background: #1ebc57;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 768px) {
+  .s.faq,
+  .faq-section {
+    padding: 65px 0 70px;
+  }
+
+  .s.faq .sh h2,
+  .faq-header h2 {
+    font-size: 29px;
+  }
+
+  .s.faq details summary {
+    padding: 16px 18px;
+  }
+
+  .faq-q-title {
+    font-size: 15.5px;
+  }
+
+  .faq-summary-left {
+    gap: 12px;
+  }
+
+  .faq-q-number {
+    min-width: 28px;
+    height: 28px;
+    font-size: 11.5px;
+  }
+
+  .faq-chevron {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+
+  .faq-content {
+    padding: 0 18px 20px 58px;
+  }
+
+  .s.faq details p,
+  .faq-content p {
+    font-size: 14.5px;
+  }
+
+  .faq-bottom-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+
+  .faq-bottom-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .faq-btn-book,
+  .faq-btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-content {
+    padding: 0 18px 18px 18px;
+  }
+}
